@@ -9,15 +9,29 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote(1, 'first quote', 0, 0, new Date(2019, 6, 9)),
-    new Quote(2, 'second quote', 3, 1, new Date(2020, 11, 28)),
-    new Quote(3, 'third quote', 2, 5, new Date(2020, 4, 17))
+    new Quote(1, 'Act as if what you do makes a difference. It does', 'William James', 0, 0, new Date(2019, 6, 9), 'Mbappe'),
+    // tslint:disable-next-line: max-line-length
+    new Quote(2, 'Success is not final, failure is not fatal: it is the courage to continue that counts', 'Winston Churchill', 3, 1, new Date(2020, 11, 28), 'Messi'),
+    // tslint:disable-next-line: max-line-length
+    new Quote(3, 'Never bend your head. Always hold it high. Look the world straight in the eye', 'Helen Keller', 2, 5, new Date(2020, 7, 22), 'Martineli')
   ];
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  // tslint:disable-next-line: typedef
+  addNewQuote(quote) {
+    const quoteLength = this.quotes.length;
+    quote.id = quoteLength + 1;
+    this.quotes.push(quote);
+  }
+
+    // tslint:disable-next-line: typedef
+    toggleDetails(index) {
+      this.quotes[index].showDescription = !this.quotes[index].showDescription;
+    }
 
   // tslint:disable-next-line: typedef
   deleteQuote(index) {

@@ -1,15 +1,36 @@
 <div class="container">
-  <h1>MY GOALS</h1>
+  <h1 class="text-center">MY QUOTES</h1>
   <hr>
 
   <div class="row">
-    <div *ngFor="let quote of quotes" class="col-md-12">
-      <app-quote-detail 
-      [quote]='quote' 
-      (deleteQuote)='deleteQuote($event)'
-      (upVoteQuote)='upVoteQuote($event)'
-      (downVoteQuote)='downVoteQuote($event)'
-      ></app-quote-detail>
+    <div class="col-md-6">
+      <div *ngFor="let quote of quotes; let i = index">
+
+        <div>
+          <h6 id={{i}} appHighlight>{{ quote.detail }}.</h6>
+        </div>
+
+        <div class="mb-2">
+          <button type="button" (click)="upVoteQuote(quote)" class="btn d-inline btn-outline-success btn-sm vote"><i
+              class="fa fa-thumbs-up"></i></button> Vote: {{ quote.upVote }}
+
+          <button type="button" (click)="downVoteQuote(quote)" class="btn btn-outline-danger btn-sm vote"><i
+              class="fa fa-thumbs-down"></i></button> Vote: {{ quote.downVote }}
+        </div>
+
+
+        <button type="button" (click)='toggleDetails(i)' class="btn btn-info mr-2">Show More</button>
+        <button type="button" (click)="onDelete(quote)" class="btn btn-dark"><i class="fa fa-trash"></i></button> <br>
+
+        <div *ngIf='quote.showDescription'>
+          <app-quote-detail [quote]='quote' (deleteQuote)='deleteQuote($event)' (upVoteQuote)='upVoteQuote($event)'
+            (downVoteQuote)='downVoteQuote($event)'></app-quote-detail>
+        </div>
+        <hr>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
     </div>
   </div>
 </div>

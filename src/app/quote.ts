@@ -1,12 +1,14 @@
 export class Quote {
-  showDateCreated: boolean;
+  showDescription: boolean;
   constructor(
     public id: number,
     public detail: string,
+    public author: string,
     public upVote: number,
     public downVote: number,
-    public dateCreated: Date
+    public dateCreated: Date,
+    public originator: string
   ) {
-    this.showDateCreated = false;
+    this.showDescription = false;
   }
 }

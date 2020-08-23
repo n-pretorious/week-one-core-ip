@@ -1,8 +1,5 @@
-<div>
-  <p>
-    {{ quote.detail }} <br>
-    <button (click)="upVote(quote)">+</button> Vote: {{ quote.upVote }} <br>
-    <button (click)="downVote(quote)">-</button> Vote: {{ quote.downVote }} <br>
-    <button (click)="onDelete(quote)">Del</button>
+<div class="container-fluid">
+  <p class="mt-2">By: {{ quote.author}}. <br>
+    Created: {{ quote.dateCreated|dateCount}} days ago by {{ quote.originator}}.
   </p>
 </div>
