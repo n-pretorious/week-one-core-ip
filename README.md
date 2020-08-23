@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## live link to the project
 
- <https://n-pretorious.github.io/week-one-prep-ip/>
+ <https://n-pretorious.github.io/week-one-core-ip/>
 
 ## License
 
