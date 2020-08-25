@@ -23,7 +23,7 @@
 
 
         <button type="button" (click)='toggleDetails(i)' class="btn btn-info mr-2">Show More</button>
-        <button type="button" (click)="onDelete(quote)" class="btn btn-dark"><i class="fa fa-trash"></i></button> <br>
+        <button type="button" (click)="deleteQuote(i)" class="btn btn-dark"><i class="fa fa-trash"></i></button> <br>
 
         <div *ngIf='quote.showDescription'>
           <app-quote-detail [quote]='quote' (deleteQuote)='deleteQuote($event)' (upVoteQuote)='upVoteQuote($event)'
