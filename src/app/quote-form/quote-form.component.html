@@ -6,14 +6,14 @@
     <div class="row">
       <div class="col">
         <label for="author">Author</label>
-        <input type class="form-control" id="author" rows="4" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
+        <input type class="form-control" id="author" rows="4" [(ngModel)]="newQuote.author" name="author" #author="ngModel" placeholder="author..." required>
         <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
           <p>Author is required</p>
         </div>
       </div>
       <div class="col">
         <label for="originator">Submitted By</label>
-        <input type class="form-control" id="originator" rows="4" [(ngModel)]="newQuote.originator" name="originator" #originator="ngModel" required>
+        <input type class="form-control" id="originator" rows="4" [(ngModel)]="newQuote.originator" name="originator" #originator="ngModel" placeholder="submitted by..." required>
         <div [hidden]="originator.valid || originator.pristine" class="alert alert-danger">
           <p>Submitted by is required</p>
         </div>
@@ -25,7 +25,7 @@
   <div class="form-group">
 
     <label for="detail">Quote</label>
-    <textarea type="text" class="form-control" id="Detail" [(ngModel)]="newQuote.detail" name="detail" #detail='ngModel' required></textarea>
+    <textarea type="text" class="form-control" id="Detail" [(ngModel)]="newQuote.detail" name="detail" #detail='ngModel' placeholder="insert quote..." required></textarea>
     <div [hidden]="detail.valid || detail.pristine" class="alert alert-danger">
       <p>Quote is required</p>
     </div>
