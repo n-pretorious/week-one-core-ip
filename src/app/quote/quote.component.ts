@@ -35,9 +35,9 @@ export class QuoteComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   deleteQuote(index) {
-    const toDelete = confirm(`Are you sure you want to delete ${index.detail}?`);
+    const toDelete = confirm(`Are you sure you want to delete '${this.quotes[index].detail}'?`);
 
-    index = this.quotes.indexOf(index);
+    // index = this.quotes.indexOf(index);
 
     if (toDelete) {
       this.quotes.splice(index, 1);
