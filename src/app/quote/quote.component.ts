@@ -37,8 +37,6 @@ export class QuoteComponent implements OnInit {
   deleteQuote(index) {
     const toDelete = confirm(`Are you sure you want to delete '${this.quotes[index].detail}'?`);
 
-    // index = this.quotes.indexOf(index);
-
     if (toDelete) {
       this.quotes.splice(index, 1);
     }
