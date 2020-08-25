@@ -7,7 +7,10 @@
       <div *ngFor="let quote of quotes; let i = index">
 
         <div class="header">
-          <h5 id={{i}} appHighlight>{{ quote.detail }}.</h5>
+          <h5 id={{i}} *ngIf='quote.upVote !== findMax()'>{{ quote.detail }}.</h5>
+          <div *ngIf='quote.upVote === findMax()'>
+              <h5 appHighlight>{{ quote.detail }}</h5>
+          </div>
         </div>
 
         <div class="mb-2">

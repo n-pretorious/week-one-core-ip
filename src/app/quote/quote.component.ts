@@ -13,7 +13,7 @@ export class QuoteComponent implements OnInit {
     // tslint:disable-next-line: max-line-length
     new Quote(2, 'Success is not final, failure is not fatal: it is the courage to continue that counts', 'Winston Churchill', 3, 1, new Date(2020, 11, 28), 'Messi'),
     // tslint:disable-next-line: max-line-length
-    new Quote(3, 'Never bend your head. Always hold it high. Look the world straight in the eye', 'Helen Keller', 2, 5, new Date(2020, 7, 22), 'Martineli')
+    new Quote(3, 'Never bend your head. Always hold it high. Look the world straight in the eye', 'Helen Keller', 4, 5, new Date(2020, 7, 22), 'Martineli')
   ];
 
   constructor() { }
@@ -28,10 +28,10 @@ export class QuoteComponent implements OnInit {
     this.quotes.push(quote);
   }
 
-    // tslint:disable-next-line: typedef
-    toggleDetails(index) {
-      this.quotes[index].showDescription = !this.quotes[index].showDescription;
-    }
+  // tslint:disable-next-line: typedef
+  toggleDetails(index) {
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  }
 
   // tslint:disable-next-line: typedef
   deleteQuote(index) {
@@ -54,4 +54,8 @@ export class QuoteComponent implements OnInit {
     index.downVote += 1;
   }
 
+  // tslint:disable-next-line: typedef
+  findMax() {
+    return Math.max.apply(Math, this.quotes.map((quote) => quote.upVote));
+  }
 }
